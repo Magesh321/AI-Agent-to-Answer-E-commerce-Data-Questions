@@ -23,10 +23,10 @@ Python 3.8+
 SQLite for local database storage of CSV data
 Pandas for CSV loading and manipulation
 FastAPI for REST API interface
-Large Language Model (LLM) interface (e.g., Gemini 2.5, OpenAI, or Ollama) for question￾to-SQL translation
+Large Language Model (LLM) interface (e.g., Gemini 2.5, OpenAI, or Ollama) for question-to-SQL translation
 
 Setup Instructions
-1. Clone or download the project folder.
+1. Clone or download the project folder and create a virtual environment.
 2. Place the three CSV files (ad_sales.csv.csv, total_sales.csv.csv, eligibility.csv.csv) in
 the project root directory.
 3. Install required packages:
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 4. Load CSV data into SQLite database:
 Run the provided data loading script (data_loader.py):
 python data_loader.py
-This creates an SQLite database ecommerce.db with three tables: ad_sales, total_sales, and
+This creates an SQLite database, ecommerce.db, with three tables: ad_sales, total_sales, and
 eligibility.
 5. Start the API server:
 uvicorn main:app --reload
@@ -65,12 +65,12 @@ Example response:
 }
 For questions or issues, contact the development team.
 This README can be enhanced with deployment instructions or environment variable
-configurations depending on your hosting setup.
+configurations, depending on your hosting setup.
 ⁂
 Example Usage
 Notes
 The LLM prompt is designed to generate SQL queries using SUM and other aggregates
-whenever the query asks for aggregated metrics.
+Whenever the query asks for aggregated metrics.
 Filtering by product/item IDs is handled by detecting item references in questions or by
 prompt instructions.
 The system safely handles division by zero for CPC and ROAS calculations using SQL
